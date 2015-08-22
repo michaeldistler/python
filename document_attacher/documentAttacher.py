@@ -46,22 +46,21 @@ class Document(object):
         documents["path"] = self.path
 
 
-docName = "test"
-docLoc = DocumentPath("Invoice","bin/local")
-docLoc2 = DocumentPath("Post Offer", "user/bin/lib")
-docLoc.path_add()
-docLoc2.path_add()
-print docLoc.path_list()
-testPath = docLoc.path
+def main():
+    docName = "test"
+    docLoc = DocumentPath("Invoice","bin/local")
+    docLoc2 = DocumentPath("Post Offer", "user/bin/lib")
+    docLoc.path_add()
+    docLoc2.path_add()
+    print docLoc.path_list()
+    testPath = docLoc.path
 
-doc = Document(name, testLocation)
-doc_save = doc.save()
+    doc = Document(name, testLocation)
+    doc_save = doc.save()
 
-print "Document Information:"
-for key, var in documents.iteritems():
-    print key, var
+    print "Document Information:"
+    for key, var in documents.iteritems():
+        print key, var
 
-doc2.move("5-january-2015")
-doc2_save = doc2.save()
-
-print doc2.name
+if __name__ == "__main__":
+    main()
