@@ -13,15 +13,9 @@ def make_soup(url):
 
 def scrape_yp_data(url):
     soup = make_soup(url)
-    # links = soup.find_all("a")
-    #
-    # for link in links:
-    #     if "http" in link:
-    #         print "<a href='%s'>%s</a>" % (link.get("href"), link.text)
+    data = soup.find_all("div", {"class": "info"})
 
-    g_data = soup.find_all("div", {"class": "info"})
-
-    for item in g_data:
+    for item in data:
         try:
             print item.contents[0].find_all(
                 "a",
